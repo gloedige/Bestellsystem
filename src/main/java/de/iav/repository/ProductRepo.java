@@ -1,5 +1,6 @@
 package de.iav.repository;
 
+import de.iav.exception.ProductNotFoundException;
 import de.iav.model.Product;
 
 import java.util.ArrayList;
@@ -16,12 +17,20 @@ public class ProductRepo {
     }
 
     // Rückgabe eines Einzelnen Produkts
-    public Product getProductById(String id){
-        return products.get(id);
+    public Product getProductById(String idOfRequestedProduct){
+        for (Product singleProductFromList: products){
+            if (singleProductFromList.getId() == idOfRequestedProduct){
+                return singleProductFromList;
+            }
     }
+    //Wenn for-Schleife durchlaufen ist, aber nichts gefunden hat...
+    //Soll eine Exception geworfen werden
+    throw new ProductNotFoundException(idOfRequestedProduct);
+
     //Rückgabe aller Produkte
     public List<Product> allProducts(){
         return new ArrayList<>(products.values());
     }
+
 
 }
