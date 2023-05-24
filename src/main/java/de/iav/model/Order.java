@@ -1,7 +1,6 @@
 package de.iav.model;
 
-import java.util.List;
-import java.util.Objects;
+import java.util.*;
 
 public class Order {
     private String id;
@@ -10,6 +9,12 @@ public class Order {
     public Order(String id, List<String> product) {
         this.id = id;
         this.productIDs = product;
+    }
+
+    public Order (String id){
+        this.id = id;
+        productIDs = new ArrayList<>(){
+        };
     }
 
     public String getId() {

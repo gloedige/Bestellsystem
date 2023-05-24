@@ -27,10 +27,10 @@ class ProductRepoTest {
         List<Product> expexctedProductList = new ArrayList<>();
         int expectedListLength =0;
         //when
-        List<Product> actualPrductList = productRepo.allProducts();
+        List<Product> actualProductList = productRepo.allProducts();
         //then
-        assertEquals(actualPrductList, expexctedProductList);
-        assertEquals(expectedListLength, actualPrductList.size());
+        assertEquals(actualProductList, expexctedProductList);
+        assertEquals(expectedListLength, actualProductList.size());
     }
 
     @Test
@@ -41,12 +41,12 @@ class ProductRepoTest {
 
         List<Product> expectedProductList = new ArrayList<>();
         expectedProductList.add(appleKeyboard);
-        ProductRepo productRepo = new ProductRepo(expectedProductList);
+        ProductRepo productRepo = new ProductRepo();
 
         //When
         List<Product> actualPrductList = productRepo.allProducts();
         //Then
-        assertEquals(actualPrductList, expectedProductList);
+        assertEquals(expectedProductList, actualPrductList);
         //assertEquals(expectedListLength, actualProductList.size());
     }
 }

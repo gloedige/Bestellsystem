@@ -11,7 +11,7 @@ import java.util.Map;
 public class Main {
     public static void main(String[] args) {
         OrderRepo orderRepo = new OrderRepo();
-        System.out.println(orderRepo.addOrder(new Order("123", List.of("34", "45"))));
+        System.out.println(orderRepo);
         System.out.println(orderRepo.getOrderById("123"));
     }
 }

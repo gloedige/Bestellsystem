@@ -9,8 +9,8 @@ import java.util.List;
 
 public class ShopService {
 
-        private OrderRepo orderRepo;
-        private ProductRepo productRepo;
+        private final OrderRepo orderRepo;
+        private final ProductRepo productRepo;
 
     public ShopService(OrderRepo orderRepo, ProductRepo productRepo) {
         this.orderRepo = orderRepo;
